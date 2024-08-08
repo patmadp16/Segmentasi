@@ -24,7 +24,7 @@ import os
 #rom keras.models import load_model
 #from keras.preprocessing import image
 
-dic = {0:'kanker',1:'no_kanker'}
+
 model = load_model('static/model/klasifikasi_model.h5')
 
 model.make_predict_function()
@@ -33,13 +33,12 @@ def predict_label(img_path):
 	i = image.img_to_array(i)/255.0
 	i = i.reshape(1, 224,224,3)
 	prediction  = np.max(model.predict(i))
-	p = np.argmax(model.predict(i))
-	confidence  = round((prediction * 100), 3)
-	if p > 0.5 :
-		ap = "no_kanker"
+	confidence  = round((prediction * 100),2)
+	if prediction == 1 :
+		label = "Kanker"
 	else:
-		ap = "kanker"
-	return ap, confidence
+		label = "Bukan Kanker"
+	return label, confidence
 
 BASE_DIR = os.getenv("BASE_DIR")
 
