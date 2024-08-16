@@ -1,6 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request, jsonify, flash
 from werkzeug.utils import secure_filename
-from operasiFile import hitungTotalFile
 
 import pandas as pd
 import numpy as np
@@ -58,7 +57,7 @@ def index():
 
 @app.route('/klasifikasi')
 def klasifikasi():
-    return render_template('classify.html', mData=BASE_URL)
+    return render_template('classification.html', mData=BASE_URL)
 
 
 @app.route("/submit", methods = ['GET', 'POST'])
@@ -71,9 +70,9 @@ def get_output():
 
 		ap, confidence = predict_label(img_path)
 
-	return render_template("classification.html", prediction = ap, img_path = img_path, confidence=confidence)
+	return render_template("result.html", prediction = ap, img_path = img_path, confidence=confidence)
 
 
 # jalankan server 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=4000)
+    app.run(host='0.0.0.0', port=8000)

@@ -1,19 +1,32 @@
 {% extends "layout.html" %}
 
 {% block contents %}
+          <!-- Background image -->
+          <div class="p-5 text-center bg-image" style="
+              background-image: url('static/background-modified.jpg');
+              height: 700px;">
+            <div class="mask" style="background-color: rgba(50, 50, 50, 0.6);">
+              <div class="d-flex justify-content-center align-items-center h-100">
+                <div class="text-white">
+                  <div class="container">
+                    <div class="px-4 py-5 my-5 text-center">
+                        <img class="d-block mx-auto mb-4" src="https://nos.jkt-1.neo.id/aditiastorage/asset/ilustrasi/Teacher-bro.png" alt="" width="430">
+                        <h1 class="display-5 fw-bold">Aplikasi klasifikasi Usus Menggunakan Deep Learning</h1>
+                        <div class="col-lg-6 mx-auto">
+                          <h4 style="margin-bottom: 20px;">
+                              
+                          </h4>
+                          <div class="d-grid d-sm-flex justify-content-sm-center">
+                            <a href="{{ BASE_URL }}/klasifikasi" class="btn btn-warning btn-lg px-4 gap-3">Mulai Klasifikasi</a>
+                          </div>
+                        </div>
+                        </div>
+                </div>
 
-<div class="container">
-      <div class="px-4 py-5 my-5 text-center">
-          <img class="d-block mx-auto mb-4" src="https://nos.jkt-1.neo.id/aditiastorage/asset/ilustrasi/Teacher-bro.png" alt="" width="430">
-          <h1 class="display-5 fw-bold">Aplikasi Segmentasi dan klasifikasi Usus Menggunakan Deep Learning</h1>
-          <div class="col-lg-6 mx-auto">
-            <h4 style="margin-bottom: 20px;">
-                
-            </h4>
-            <div class="d-grid d-sm-flex justify-content-sm-center">
-              <a href="{{ BASE_URL }}/klasifikasi" class="btn btn-warning btn-lg px-4 gap-3">Mulai Klasifikasi</a>
+               </div>
+              </div>
             </div>
           </div>
-        </div>
-  </div>
+          <!-- Background image -->
+
 {% endblock contents %}

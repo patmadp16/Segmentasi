@@ -6,17 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://nos.jkt-1.neo.id/aditiastorage/lib/datatable/datatables.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>Medical Cancer Application</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://nos.jkt-1.neo.id/aditiastorage/lib/datatable/jquery.min.js"></script>
-    <script src="https://nos.jkt-1.neo.id/aditiastorage/lib/datatable/datatables.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" ></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link href="{{ url_for("static", filename="css/main.css") }}" rel="stylesheet">
-    
   </head>
+  <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color: #3498db;
+       color: white;
+       text-align: center;
+    }
+    </style>
+
   <body>
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3498db;">
             <div class="container-fluid">
@@ -26,52 +36,22 @@
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link" href="{{ BASE_URL }}/">Beranda</a>
-                   <a class="nav-link" href="{{ BASE_URL }}/klasifikasi">Proses Klasifikasi</a>
-                    <a class="nav-link" href="{{ BASE_URL }}/Segmentasi">Proses Segmentasi</a>
+                   <a class="nav-link" href="{{ BASE_URL }}/klasifikasi">Klasifikasi</a>
+                   <!--
+                    <a class="nav-link" href="{{ BASE_URL }}/Segmentasi">Proses Segmentasi</a>--->
                 </div>
               </div>
             </div>
         </nav>
-    
-      {% block contents %}
+                      
+        {% block contents %}
+        {% endblock contents %}
 
-      {% endblock contents %}
-
-        <footer style="margin-top: 70px;">
+        <footer style="margin-top: 70px;" class="footer">
             <div style="text-align: center">
-                <!----
-                <p>Data science project By <a href="https://almira-tech.com">Almira Tech</a><br/>
-                <small>Bantu support kami di <a href="{{ BASE_URL }}/tentang-project">sini</a></small>
+              <i class="bi bi-c-circle"></i>&nbsp; Intestine  Cancer Classification
                 </p>
-                ----->
             </div>
         </footer>
-  <script>
-    function pesanUmumApp(icon, title, text)
-    {
-      Swal.fire({
-        icon : icon,
-        title : title,
-        text : text
-      });
-    }
-    function confirmQuest(icon, title, text, x)
-    {
-        Swal.fire({
-            title: title,
-            text: text,
-            icon: icon,
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes",
-            cancelButtonText: "No",
-        }).then((result) => {
-            if (result.value) {
-                x();
-            }
-        });
-    }
-  </script> 
   </body>
 </html>

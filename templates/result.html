@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block contents %}
+
+<!-- .hero -->
+ <div class="container">
+    <div class="row">
+        <div class="card text-center mb-3" style="margin-top: 40px;">
+            {% if confidence %}
+            <div dir="divFormHasil" class="card-header">
+                <h4> Hasil Prediksi</h4>
+            </div>
+            <div class="card-body">
+                <img class="img-fluid rounded shadow-sm mx-auto float-start" src="{{img_path}}" height="400px" width="400px">
+                <div id="capHasilPrediksi" class="mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">                 
+                            <h3 class="text-start fw-border"><i class="bi bi-info-square-fill"></i> &nbsp;Predicted Class : {{prediction}}</h3>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-body">                
+                            <h3 class="text-start fw-border"> <i class="bi bi-info-square-fill"></i>&nbsp;Accuracy : {{confidence}}%</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <a href="{{ BASE_URL }}/klasifikasi" class="btn btn-primary btn-lg" id="btnUlang"><i class="bi bi-arrow-repeat"></i> &nbsp;Uji ulang</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+ </div>
+ 
+ {% endblock contents %}
